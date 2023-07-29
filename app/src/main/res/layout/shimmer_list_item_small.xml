@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.google.gson.JsonObject" />
+    </data>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/round_corners_medium_shape"
+        android:backgroundTint="@color/shimmer"
+        android:drawablePadding="8dp"
+        android:elevation="@dimen/plane_02"
+        android:padding="8dp" />
+</layout>

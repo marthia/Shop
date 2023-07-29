@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?attr/actionButtonStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:clipToPadding="false"
+    android:focusable="true">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/badge"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/round_corners_small_shape"
+        android:backgroundTint="@color/colorSecondary"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceOverline"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        android:visibility="gone" />
+
+    <!-- Sync image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_product_cart_outlined_black" />
+
+</FrameLayout>

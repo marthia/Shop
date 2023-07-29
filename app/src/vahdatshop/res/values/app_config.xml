@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">وحدت شاپ</string>
+    <string name="login">ورود به وحدت ‌شاپ</string>
+    <string name="splash_branding_text">عرضه کننده لوازم خیاطی، خرازی و لوازم تزئینی</string>
+
+    <color name="colorSecondary">#ec008c</color>
+    <color name="colorOnSurface">#23c8dc</color>
+</resources>

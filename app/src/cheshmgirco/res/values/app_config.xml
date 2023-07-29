@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">چشمگیر</string>
+    <string name="login">ورود به چشمگیر</string>
+    <string name="splash_branding_text">آشپزخانه خود را با چشمگیر بچینید</string>
+
+    <color name="colorOnSurface">#ff9c01</color>
+    <color name="colorSecondary">#283349</color>
+</resources>

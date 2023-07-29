@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="App" parent="@style/Theme.App" />
+
+    <style name="Theme.App" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!--Color-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+
+        <item name="colorSurface">@color/white</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="android:colorBackground">@color/colorBackgroundDefault</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="android:colorEdgeEffect">@color/accent_alpha_40</item>
+        <item name="scrimBackground">@color/colorBackgroundDefault</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:listDivider">@drawable/divider</item>
+        <item name="android:textCursorDrawable">@null</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.App.LargeComponent
+        </item>
+        <item name="shapeAppearanceCircular">@style/ShapeAppearance.App.CircularShapeAppearance
+        </item>
+
+        <item name="shapeAppearanceSharp">@style/ShapeAppearance.App.NoCorner</item>
+
+        <!--Typography-->
+        <item name="textAppearanceHeadline2">@style/TextAppearance.App.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.App.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.App.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.App.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.App.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.App.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.App.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.App.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.App.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.App.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.App.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.App.Overline</item>
+        <item name="textAppearanceSmall">@style/TextAppearance.App.Small</item>
+        <item name="textAppearanceMedium">@style/TextAppearance.App.Medium</item>
+        <item name="textAppearanceLarge">@style/TextAppearance.App.Large</item>
+        <item name="textAppearanceError">@style/TextAppearance.App.Small</item>
+
+        <item name="actionMenuTextAppearance">@style/ActionMenuTextAppearance</item>
+
+        <item name="textAppearanceSmallPopupMenu">@style/PopupMenuSmall</item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/PopupMenuSmall</item>
+
+        <item name="textAppearanceLargePopupMenu">@style/PopupMenuLarge</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/PopupMenuLarge</item>
+
+        <item name="inputTextAppearance">@style/TextAppearance.App.InputStyle</item>
+        <item name="numberTextAppearance">@style/TextAppearance.App.Number</item>
+
+        <!--Styles-->
+        <item name="bottomAppBarStyle">
+            @style/Widget.MaterialComponents.BottomAppBar.PrimarySurface
+        </item>
+        <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationStyle</item>
+        <item name="navigationViewStyle">@style/Widget.App.NavigationView</item>
+        <item name="tabStyle">@style/Widget.App.TabLayout</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputStyle</item>
+        <item name="android:textSelectHandle">@drawable/cursor_thumb</item>
+        <item name="searchViewStyle">@style/Widget.App.SearchView</item>
+        <item name="switchStyle">@style/Widget.App.Switch</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
+        <item name="checkboxStyle">@style/Widget.App.CheckBox</item>
+
+        <item name="snackbarStyle">@style/SnackBarStyle</item>
+        <item name="snackbarButtonStyle">@style/SnackBarButtonStyle</item>
+        <item name="snackbarTextViewStyle">@style/SnackBarTextStyle</item>
+        <item name="spinnerDropDownItemStyle">@style/SpinnerItemStyle</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
+
+        <!--System/Platform attributes-->
+        <item name="android:windowBackground">?android:colorBackground</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+
+    </style>
+
+</resources>

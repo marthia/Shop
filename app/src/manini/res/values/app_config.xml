@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مانی نی</string>
+    <string name="login">ورود به مانی‌نی</string>
+    <string name="splash_branding_text"><![CDATA[<b>فــروشگاه اینترنتی مانــی‌نــی</b><br><b><font color=#9E9E9E>سیسمونی، لوازم مادر و نوزاد</font></b>]]></string>
+
+    <color name="colorOnSurface">#5ea144</color>
+    <color name="colorSecondary">#e82169</color>
+</resources>

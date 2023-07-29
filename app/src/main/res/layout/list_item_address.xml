@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.google.gson.JsonObject" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="viewStart"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:addressObject="@{item.get(&quot;fields&quot;)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tag="@{`address_street`}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/province"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:textAppearance="?textAppearanceCaption"
+            android:textColor="@color/color_on_surface_emphasis_medium"
+            app:addressObject="@{item.get(&quot;fields&quot;)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address"
+            app:setIconStart="@{`&#xf1ad;`}"
+            app:tag="@{`address_city`}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?textAppearanceCaption"
+            android:textColor="@color/color_on_surface_emphasis_medium"
+            app:addressObject="@{item.get(&quot;fields&quot;)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/province"
+            app:setIconStart="@{`&#xf879;`}"
+            app:tag="@{`address_telephone2`}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?textAppearanceCaption"
+            android:textColor="@color/color_on_surface_emphasis_medium"
+            app:addressObject="@{item.get(&quot;fields&quot;)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/telephone"
+            app:setIconStart="@{`&#xf3cd;`}"
+            app:tag="@{`address_telephone`}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?textAppearanceCaption"
+            android:textColor="@color/color_on_surface_emphasis_medium"
+            app:addressObject="@{item.get(&quot;fields&quot;)}"
+            app:firstName="@{`address_firstname`}"
+            app:lastName="@{`address_lastname`}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone"
+            app:setIconStart="@{`&#xf2b9;`}" />
+
+        <ImageButton
+            android:id="@+id/context_menu"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#00FFFFFF"
+            android:drawablePadding="8dp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_outline_more_vert_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/full_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/edit_address"
+            android:textAppearance="?textAppearanceBody2"
+            android:textColor="?colorOnSurface"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_left_24"
+            app:drawableTint="?colorOnSurface"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

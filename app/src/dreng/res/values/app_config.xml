@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">دکتر مهندس</string>
+    <string name="login">ورود</string>
+    <string name="splash_branding_text">فروشگاه اینترنتی دکتر مهندس\n نبض سلامتی</string>
+
+    <color name="colorSecondary">#19bba3</color>
+    <color name="colorOnSurface">#04a5dc</color>
+</resources>

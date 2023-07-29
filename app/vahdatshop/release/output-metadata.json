@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.poonehmedia.vahdatshop",
+  "variantName": "processVahdatshopReleaseResources",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 26,
+      "versionName": "4.1126",
+      "outputFile": "app-vahdatshop-release.apk"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.google.gson.JsonObject" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView3"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            app:imageUrl="@{item.get(&quot;image&quot;).asString}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:maxLines="2"
+            android:minLines="2"
+            android:text="@{item.get(&quot;title&quot;).asString}"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="چگونه با ویروس مقابله کنیم؟" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/category"
+            emptyObj="@{item}"
+            emptyText="@{`info1`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:maxWidth="150dp"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?colorSecondaryVariant"
+            app:layout_constraintBaseline_toBaselineOf="@id/date"
+            app:layout_constraintStart_toEndOf="@id/imageView3"
+            tools:text="پیشگیری و درمان" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/date"
+            emptyObj="@{item}"
+            emptyText="@{`info2`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:text="28 مرداد ۹۹" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/body"
+            optionalKey="@{`text`}"
+            optionalObj="@{item}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:minLines="1"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView3"
+            app:layout_constraintTop_toBottomOf="@id/hits"
+            tools:text="چکیده تخمین زمان مطالعه: 5 دقیقه\r\nکرونا ویروس جدیدی که باعث کووید 19 می شود، از طریق سیستم تنفسی وارد بدن شده و به سمت ریه ها حرکت می کند. با..." />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/hits"
+            emptyObj="@{item}"
+            emptyText="@{`info3`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            tools:text="27 بازدید" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/comment"
+            emptyObj="@{item}"
+            emptyText="@{`info4`}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBaseline_toBaselineOf="@id/hits"
+            app:layout_constraintEnd_toStartOf="@id/hits"
+            app:layout_constraintStart_toEndOf="@id/imageView3"
+            tools:text="28 مرداد ۹۹" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

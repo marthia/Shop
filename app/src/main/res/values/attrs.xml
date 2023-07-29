@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FontTextView">
+        <attr name="brand_icon" format="boolean" />
+        <attr name="solid_icon" format="boolean" />
+    </declare-styleable>
+
+    <!--Custom view themes/styles-->
+    <attr name="textAppearanceSmall" format="reference" />
+    <attr name="textAppearanceMedium" format="reference" />
+    <attr name="textAppearanceLarge" format="reference" />
+    <attr name="textAppearanceError" format="reference" />
+    <attr name="inputTextAppearance" format="reference" />
+    <attr name="numberTextAppearance" format="reference" />
+    <attr name="shapeAppearanceCircular" format="reference" />
+    <attr name="shapeAppearanceSharp" format="reference" />
+
+    <declare-styleable name="BrandingSearchView">
+        <attr name="offset" format="boolean" />
+    </declare-styleable>
+
+</resources>

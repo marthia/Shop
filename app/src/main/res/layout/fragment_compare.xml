@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.poonehmedia.app.components.adaptiveTable.AdaptiveTableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?actionBarSize"
+        android:clipToPadding="false"
+        app:cellMargin="1dp"
+        app:dragAndDropEnabled="false"
+        app:fixedHeaders="true"
+        app:solidRowHeaders="true" />
+</layout>

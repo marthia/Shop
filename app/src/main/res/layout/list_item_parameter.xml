@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.google.gson.JsonObject" />
+
+        <variable
+            name="selection"
+            type="Boolean" />
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:cardBackgroundColor="?colorSurface"
+        app:cardElevation="4dp"
+        app:cardSelection="@{selection}"
+        app:shapeAppearance="?shapeAppearanceLargeComponent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="8dp"
+            android:text="@{item.get(&quot;text&quot;).asString == null ? `` : item.get(&quot;text&quot;).asString}"
+            android:textAppearance="?attr/textAppearanceBody2"
+            tools:text="24" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,70 @@
+@font-face {
+	font-family: iran_yekan;
+	src: url('file:///android_asset/fonts/iran_yekan_regular.ttf');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: iran_yekan;
+	src: url('file:///android_asset/fonts/iran_yekan_bold.ttf');
+	font-weight: bold;
+}
+body{
+	direction: rtl;
+	font-family: iran_yekan;
+	padding: 16px 16px 64px;
+	text-align: justify;
+    text-justify: inter-word;
+}
+
+img {
+max-width: 100%;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+label, .formResponsive .formHorizontal .formControlLabel, .form-horizontal .control-label, .form-horizontal .control-group .control-label {
+    text-align: right;
+}
+
+.center{
+	text-align: center;
+}
+.formResponsive .formHorizontal .formControlLabel, .form-horizontal .control-label, label, #comments-form label, #comments-report-form label {
+    float: none;
+    width: auto;
+    padding: 0;
+    margin: 0 8px;
+}
+.formResponsive .formBody{
+	float: none;
+}
+.formResponsive .formHorizontal .formControls {
+    margin: 0 8px;
+}
+.formResponsive select, .formResponsive textarea, .formResponsive input[type="text"], .formResponsive input[type="number"], .formResponsive input[type="email"], .formResponsive input[type="tel"], .formResponsive input[type="url"], .formResponsive input[type="password"]{
+	line-height: 24px;
+	height: 24px;
+}
+.formResponsive textarea{
+	height: auto;
+}
+
+.formResponsive input[type="submit"], .formResponsive button[type="submit"] {
+    border: none;
+	background: {{SECONDARY_COLOR}};
+    *background: {{SECONDARY_COLOR}};
+    color: #ffffff;
+    text-shadow: unset;
+}
+
+.btn-primary, .button-primary {
+    border: none;
+	background: {{SECONDARY_COLOR}};
+    *background: {{SECONDARY_COLOR}};
+    color: #ffffff;
+    text-shadow: unset;
+}

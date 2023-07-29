@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.google.gson.JsonObject" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_corners_small_shape"
+        android:clipToPadding="false"
+        android:elevation="@dimen/plane_02">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/order_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{item.get(&quot;order_status&quot;).asString}"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="وضعیت" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{item.get(&quot;order_created&quot;).asString}"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opesrs"
+            tools:text="27 مرداد ۹۸" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/opa09"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{item.get(&quot;order_number&quot;).asString}"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="شماره سفارش" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/opa098"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{item.get(&quot;click_partner_price&quot;).asString}"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintEnd_toStartOf="@id/order_title"
+            app:layout_constraintStart_toEndOf="@id/opa09"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="سهم" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/opesrs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{item.get(&quot;click_partner_price&quot;).asString}"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opa098"
+            tools:text="قیمت کل" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dfae33"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{item.get(&quot;order_id&quot;).asString}"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintBaseline_toBaselineOf="@id/date"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="123456" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

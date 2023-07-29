@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="divider">#EEEEEE</color>
+    <color name="rating_bar_color">#FF9800</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="delete_icon_red">#B31307</color>
+    <color name="accent_alpha_40">#DDDDDD</color>
+    <color name="tab_background">#FFFFFF</color>
+    <color name="red_color_badge">#D85E5E</color>
+    <color name="green_color_badge">#207100</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryVariant">#9b4a97</color>
+    <color name="colorSecondaryVariant">#545766</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#202020</color>
+    <color name="colorError">#C30400</color>
+    <color name="colorTextInputBackground">#F0F0F1</color>
+    <color name="colorOnBackground">#222222</color>
+    <color name="color_item_badge">#D1D1D1</color>
+    <color name="colorBackgroundDefault">#F8F8F8</color>
+    <color name="color_text_input_unfocused">#C8C8C8</color>
+    <color name="color_on_surface_emphasis_high">#1C1C1C</color>
+    <color name="color_on_surface_emphasis_semi_high">#454a53</color>
+    <color name="color_on_surface_emphasis_medium">#6c7077</color>
+    <color name="color_on_surface_emphasis_low">#9E9E9E</color>
+    <color name="shimmer">#ADADAD</color>
+    <drawable name="transparent">#00ffffff</drawable>
+</resources>

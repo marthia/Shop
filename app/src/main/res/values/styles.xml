@@ -1,0 +1,158 @@
+<resources>
+
+    <style name="Widget.App.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <!--Remove any scrim insets applied by NavigationView for system bars-->
+        <item name="insetForeground">@android:color/transparent</item>
+        <!--Set the background color of NavigationView-->
+        <item name="android:background">?colorSurface</item>
+        <item name="elevation">0dp</item>
+        <item name="itemTextAppearance">?attr/textAppearanceSubtitle2</item>
+        <item name="itemTextColor">@color/navigation_item_color_selector</item>
+        <item name="itemIconTint">@color/navigation_item_color_selector</item>
+    </style>
+
+    <style name="Widget.App.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:background">@color/tab_background</item>
+        <item name="tabIndicatorColor">?attr/colorSecondary</item>
+        <item name="tabTextColor">@color/tab_text_color_selector</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="elevation">2dp</item>
+    </style>
+
+    <style name="Widget.App.TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/colorTextInputBackground</item>
+        <item name="shapeAppearanceOverlay">?attr/shapeAppearanceMediumComponent</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="hintEnabled">false</item>
+        <item name="errorTextAppearance">?attr/textAppearanceError</item>
+        <item name="errorTextColor">?attr/colorError</item>
+        <item name="android:textAlignment">center</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="colorControlActivated">?attr/colorSecondaryVariant</item>
+        <item name="endIconTint">@color/color_text_input_unfocused</item>
+        <item name="startIconTint">@color/color_text_input_unfocused</item>
+        <item name="boxStrokeColor">@color/input_text_stroke</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="android:textColorHint">@color/color_text_input_unfocused</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">?colorSurface</item>
+        <item name="itemIconTint">@color/navigation_bar_txt_color</item>
+        <item name="itemTextAppearance">?attr/textAppearanceOverline</item>
+        <item name="itemTextColor">@color/navigation_bar_txt_color</item>
+        <item name="paddingStart">@dimen/bottom_navigation_padding</item>
+        <item name="paddingEnd">@dimen/bottom_navigation_padding</item>
+        <item name="badgeStyle">@style/BadgeStyle</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="Widget.App.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="submitBackground">@android:color/transparent</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="closeIcon">@drawable/ic_round_close_24</item>
+        <item name="searchIcon">@drawable/ic_round_search_24</item>
+        <item name="iconifiedByDefault">false</item>
+    </style>
+
+    <style name="SnackBarStyle" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:layout_margin">32dp</item>
+        <item name="backgroundOverlayColorAlpha">1.0</item>
+        <item name="actionTextColorAlpha">1.0</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="animationMode">slide</item>
+    </style>
+
+    <style name="SnackBarButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">?colorSecondary</item>
+    </style>
+
+    <style name="SnackBarTextStyle" parent="Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    <style name="SpinnerItemStyle" parent="Widget.AppCompat.Spinner.DropDown">
+        <item name="android:textAppearance">?textAppearanceBody2</item>
+    </style>
+
+    <style name="BadgeStyle">
+        <item name="android:textAppearance">?attr/textAppearanceOverline</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/round_corners_small_shape</item>
+        <item name="android:backgroundTint">?attr/colorSecondary</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="ActionMenuTextAppearance">
+        <item name="fontFamily">@font/iran_yekan_medium</item>
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+
+    <style name="Widget.App.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox"></style>
+
+    <style name="PopupMenuSmall" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small">
+        <item name="fontFamily">@font/iran_yekan_fa_num</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+
+    <style name="PopupMenuLarge" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large">
+        <item name="fontFamily">@font/iran_yekan_fa_num</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+
+
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.App.BottomSheet</item>
+    </style>
+
+    <style name="Widget.App.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.BottomSheet</item>
+    </style>
+
+
+    <style name="Widget.App.Switch" parent="Widget.AppCompat.CompoundButton.Switch">
+
+    </style>
+
+    <style name="CardStyle">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:background">?colorSurface</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/button_background_tint</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="Widget.App.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="strokeColor">@color/outlined_button_stroke</item>
+        <item name="rippleColor">@color/outlined_button_ripple</item>
+    </style>
+
+    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearance">?shapeAppearanceMediumComponent</item>
+        <item name="cardElevation">1dp</item>
+        <item name="cardBackgroundColor">@color/colorBackgroundDefault</item>
+    </style>
+
+    <style name="Widget.App.FullScreenDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="actionMenuTextColor">@color/colorAccent</item>
+    </style>
+
+</resources>

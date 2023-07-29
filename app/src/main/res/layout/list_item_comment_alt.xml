@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.poonehmedia.app.R" />
+
+        <variable
+            name="item"
+            type="com.poonehmedia.app.data.model.Comment" />
+
+        <variable
+            name="inappropriateClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="likeClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="dislikeClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="replyClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="?colorSurface"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/divider"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="?textAppearanceBody2"
+                app:htmlText="@{item.comment}"
+                app:layout_constraintBottom_toTopOf="@id/like"
+                app:layout_constraintEnd_toStartOf="@id/reply"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view8"
+                tools:text="یکی از بهترین گوشی های بازار با پشتیبانی نرم افزاری قوی... اندروید پیش فرض ۱۱ است که با پشتیبانی سه ساله وان پلاس میتوان چند سال بدون مشکل از آن استفاده کرد. و از آنجایی که 5g است" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{item.userName}"
+                android:textAppearance="?textAppearanceSubtitle2"
+                app:layout_constraintEnd_toStartOf="@id/textView20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="مرجان سلطانی" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{item.date}"
+                android:textAppearance="?textAppearanceCaption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="27 مهر ۹۹" />
+
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView18" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawablePadding="8dp"
+                android:gravity="bottom"
+                android:onClick="@{inappropriateClick}"
+                android:text="@string/report_inappropriate_content"
+                android:textAppearance="?textAppearanceCaption"
+                app:drawableStartCompat="@drawable/ic_flag_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:showHide="@{item.inappropriateEnabled}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dislike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawablePadding="8dp"
+                android:enabled="@{item.dislikeEnabled}"
+                android:gravity="bottom"
+                android:onClick="@{dislikeClick}"
+                android:text="@{item.dislikeCount}"
+                android:textAppearance="?textAppearanceCaption"
+                app:drawableEndCompat="@drawable/ic_baseline_thumb_down_alt_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="21" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawablePadding="8dp"
+                android:enabled="@{item.likeEnabled}"
+                android:gravity="bottom"
+                android:onClick="@{likeClick}"
+                android:text="@{item.likeCount}"
+                android:textAppearance="?textAppearanceCaption"
+                app:drawableEndCompat="@drawable/ic_baseline_thumb_up_alt_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/dislike"
+                tools:text="21" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:drawablePadding="8dp"
+                android:gravity="bottom"
+                android:onClick="@{replyClick}"
+                android:src="@drawable/ic_reply_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textView2"
+                app:showHide="@{item.replyEnabled}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

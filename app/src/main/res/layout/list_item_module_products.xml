@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.google.gson.JsonObject" />
+
+        <variable
+            name="priceItem"
+            type="com.poonehmedia.app.data.model.Price" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/product_module_list_item_width"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/modules_padding_start"
+        android:paddingEnd="@dimen/modules_padding_end"
+        android:paddingBottom="@dimen/modules_padding_bottom">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            app:imageUrl="@{item.get(&quot;image&quot;).asString}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/badge"
+            style="@style/BadgeStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red_color_badge"
+            android:text="@{priceItem.discount}"
+            app:layout_constraintBottom_toBottomOf="@id/price_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/price_layout"
+            app:showHide="@{!priceItem.discount.empty}"
+            tools:text="20%" />
+
+        <LinearLayout
+            android:id="@+id/price_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="end|center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/badge"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:minLines="2"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:setPrice="@{priceItem.price}"
+                tools:text="2000 تومان\n 4000" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/off_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description">
+
+            <ProgressBar
+                android:id="@+id/off_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/off_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{priceItem.description}"
+                android:textAppearance="?textAppearanceCaption"
+                android:textColor="@color/color_on_surface_emphasis_low"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/off_progress"
+                tools:text="12 : 31 : 12" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{priceItem.description}"
+            android:textAppearance="?textAppearanceOverline"
+            android:textColor="@color/color_on_surface_emphasis_low"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/price_layout"
+            app:showHide="@{!priceItem.description.empty}"
+            tools:text="قیمت عمده فروشی" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            android:text="@{item.get(&quot;title&quot;).asString}"
+            android:textAppearance="?textAppearanceSubtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/badges"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info1"
+            optionalKey="@{`info1`}"
+            optionalObj="@{item}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxWidth="150dp"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?colorSecondaryVariant"
+            app:layout_constraintBaseline_toBaselineOf="@id/info2"
+            app:layout_constraintEnd_toStartOf="@id/info2"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="پیشگیری و درمان" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info2"
+            optionalKey="@{`info2`}"
+            optionalObj="@{item}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/off_timer"
+            tools:text="28 مرداد ۹۹" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info3"
+            optionalKey="@{`info3`}"
+            optionalObj="@{item}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info2"
+            tools:text="27 بازدید" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/info4"
+            optionalKey="@{`info4`}"
+            optionalObj="@{item}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBaseline_toBaselineOf="@id/info3"
+            app:layout_constraintEnd_toStartOf="@id/info3"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="28 مرداد ۹۹" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

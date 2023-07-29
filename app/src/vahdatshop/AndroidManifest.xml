@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.poonehmedia.app">
+
+
+    <application>
+
+        <!--used for notification-->
+        <meta-data
+            android:name="com.najva.sdk.metadata.API_KEY"
+            android:value="f0f62aec-5bc3-4005-8242-c57685646c31" />
+        <meta-data
+            android:name="com.najva.sdk.metadata.WEBSITE_ID"
+            android:value="20021" />
+
+    </application>
+
+</manifest>

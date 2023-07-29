@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.poonehmedia.app.data.model.SearchHistory" />
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:cardElevation="0dp"
+        app:shapeAppearance="?shapeAppearanceLargeComponent"
+        app:strokeColor="@color/black_30"
+        app:strokeWidth="1dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:paddingStart="24dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:text="@{item.query}"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_left_24"
+            tools:text="شومیز راه راه" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

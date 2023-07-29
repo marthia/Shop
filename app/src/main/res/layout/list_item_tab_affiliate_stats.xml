@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.google.gson.JsonObject" />
+
+        <variable
+            name="onDetailsClick"
+            type="com.poonehmedia.app.ui.interfaces.OnCustomClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view5">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{item.get(&quot;title&quot;).asString}"
+            android:textAppearance="?textAppearanceSubtitle2"
+            app:layout_constraintBottom_toTopOf="@id/text5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="مبلغ پرداخت نشده برای کلیک ها" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/text5"
+            style="@style/Widget.App.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/affiliate_stats_details"
+            app:item="@{item}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/text0"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/text0"
+            app:layout_constraintTop_toBottomOf="@id/text0"
+            app:onClick="@{onDetailsClick}"
+            app:showHide="@{item.has(&quot;history&quot;)}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{item.get(&quot;total&quot;).asString}"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/text0"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="0 تومان" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,161 @@
+plugins {
+    id 'com.android.application'
+    id 'androidx.navigation.safeargs'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.poonehmedia"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionName "4.11"
+        multiDexEnabled true
+        resConfigs 'en', 'ru', 'fa'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "shop"
+    productFlavors {
+        manini {
+            dimension "shop"
+            applicationIdSuffix ".manini"
+            versionCode 9
+            versionNameSuffix "09"
+            manifestPlaceholders = [hostName: "maninimarket.ir"]
+            buildConfigField "String", "baseUrl", '"https://www.maninimarket.ir/"'
+        }
+        vahdatshop {
+            dimension "shop"
+            applicationIdSuffix ".vahdatshop"
+            versionCode 26
+            versionNameSuffix "26"
+            manifestPlaceholders = [hostName: "vahdatshop.com"]
+            buildConfigField "String", "baseUrl", '"https://www.vahdatshop.com/"'
+        }
+        cheshmgirco {
+            dimension "shop"
+            applicationIdSuffix ".cheshmgirco"
+            versionCode 9
+            versionNameSuffix "09"
+            manifestPlaceholders = [hostName: "cheshmgirco.com"]
+            buildConfigField "String", "baseUrl", '"https://www.cheshmgirco.com/"'
+        }
+        dreng {
+            dimension "shop"
+            applicationIdSuffix ".dreng"
+            versionCode 16
+            versionNameSuffix "16"
+            manifestPlaceholders = [hostName: "doctor-mohandes.com"]
+            buildConfigField "String", "baseUrl", '"https://www.doctor-mohandes.com/"'
+        }
+        shahrahan {
+            dimension "shop"
+            applicationIdSuffix ".shahrahan"
+            versionCode 4
+            versionNameSuffix "04"
+            manifestPlaceholders = [hostName: "shahrahan.com"]
+            buildConfigField "String", "baseUrl", '"https://www.maninimarket.ir/"'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // design
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.fragment:fragment:1.3.0'
+    annotationProcessor 'androidx.annotation:annotation:1.1.0'
+
+    def coreVersion = "1.3.2"
+    implementation "androidx.core:core:$coreVersion"
+
+    // navigation
+    def navigationVersion = '2.3.3'
+    implementation "androidx.navigation:navigation-fragment:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui:$navigationVersion"
+
+    // glide
+    def glide_version = '4.12.0'
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    def lifecylceVersion = "2.3.0"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecylceVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecylceVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecylceVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecylceVersion"
+
+    // retrofit & OkHttp
+    def retrofitVersion = "2.9.0"
+    def okhttpVersion = '5.0.0-alpha.2'
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$okhttpVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
+    // cookies
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // hilt
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    annotationProcessor "com.google.dagger:hilt-compiler:$hiltVersion"
+    def hiltViewModelVersion = '1.0.0-alpha03'
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModelVersion"
+
+    // rxJava & rxAndroid
+    def rxJavaVersion = '3.0.9'
+    def rxAndroidVersion = '3.0.0'
+    implementation "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava3:rxjava:$rxJavaVersion"
+
+    def pagingVersion = '3.0.0-beta01'
+    implementation "androidx.paging:paging-runtime:$pagingVersion"
+    implementation "androidx.paging:paging-rxjava3:$pagingVersion"
+
+    // misc
+    implementation 'com.github.smarteist:autoimageslider:1.3.9'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+    implementation 'com.google.android.exoplayer:exoplayer:2.12.2'
+    implementation 'com.github.Jay-Goo:RangeSeekBar:3.0.0'
+
+    // najva fcm (notification panel)
+    implementation 'com.najva.sdk:najva-android-sdk:1.2.10'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+
+    def acraVersion = '5.7.0'
+    implementation "ch.acra:acra-http:$acraVersion"
+
+    // room
+    def roomVersion = "2.3.0-beta02"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-rxjava3:$roomVersion"
+}
